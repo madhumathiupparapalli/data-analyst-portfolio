@@ -2,6 +2,8 @@
 ## Overview
 This project analyzes the UCI Online Retail Dataset (UK-based e-commerce transactions from Jan–Dec 2011) to understand customer purchasing behavior, retention patterns, churn drivers, and Customer Lifetime Value (CLV). The goal is to provide actionable recommendations to improve retention and maximize revenue.
 
+![Dashboard](./1_Dashboard.png)
+
 ## Dataset
 - Source: UCI Online Retail Dataset  
 - Region: UK-based e-commerce  
@@ -34,12 +36,16 @@ E-commerce businesses often struggle with high customer churn and difficulty ide
 - CLV Calculation using AOV × Purchase Frequency × Lifespan (in months)
 - RFM-style Segmentation into High, Mid, and Low-Value customers
 
+![Detailed Dashboard](./2_Dashboard_detailed.png)
+
 ## Key Insights
 - Overall retention rate is 95.4%, yet 77.4% of customers eventually churn after 90+ days of inactivity.
 - Only 5.6% of customers (22 High-Value) contribute 37% of total revenue (£93,084 out of £251,801).
 - The United Kingdom accounts for 89.2% of the customer base (348 out of 390 customers).
 - March had the lowest activity with only 59 transactions.
 - Low-Value customers (84% of base) contribute only 54% of revenue, while High-Value customers deliver significantly higher lifetime value.
+
+  ![Insights](./3_insights.png)
 
 ## Recommendations
 - Launch personalized re-engagement campaigns (email/SMS) at the 60-day inactivity mark to reduce churn.
