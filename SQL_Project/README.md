@@ -54,10 +54,14 @@ This project aims to answer:
 * States like **AL, RR, and AP** have the highest late delivery rates
 * Late deliveries strongly correlate with **lower review scores**
 
+![Late Delivery](./late_delivery.png)
+
 ### 2. Regional Delivery Gap
 
 * **São Paulo (SP)** → fastest deliveries (~8 days)
 * Remote states → **24–25 days (3x slower)**
+
+![Delivery Time](./delivery_time.png)
 
 ### 3. Product Quality Insights
 
@@ -69,6 +73,8 @@ This project aims to answer:
 * Sellers with **>5 orders and 1.0–1.5 rating** are consistent underperformers
 * Indicates **systematic service issues**, not random failures
 
+![Seller Analysis](./seller_performance.png)
+
 ### 5. Freight Cost Inefficiency
 
 * Highest freight observed in **PB (Paraíba)**
@@ -78,6 +84,8 @@ This project aims to answer:
 
 * Low freight: R$13.99 → 11 days → rating 4.13
 * High freight: R$77.29 → 16 days → rating 3.99
+
+![Freight Analysis](./freight_analysis.png)
 
 ➡️ Customers paying more are **not receiving better service**
 
