@@ -35,7 +35,7 @@ This project aims to answer:
 - Attrition by department and job role
 - Attrition split by gender and overtime
 
-![Attrition Overview](./attrition_overview.png)
+![Attrition Overview](./1_attrition_overview.png)
 
 ### 2. Attrition Factors
 - Attrition by job satisfaction levels
@@ -43,7 +43,7 @@ This project aims to answer:
 - Attrition by income bands
 - Attrition by tenure
 
-![Attrition Factors](./attrition_factors.png)
+![Attrition Factors](./2_attrition_factors.png)
 
 ## Key Insights
 
