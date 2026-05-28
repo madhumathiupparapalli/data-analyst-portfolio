@@ -4,6 +4,14 @@ Welcome to my Data Analyst Portfolio. This repository showcases projects built u
 
 ## Projects
 
+### RetailPulse: E-Commerce Customer Intelligence
+- Analyzed 32M+ Instacart transactions using SQL, Python, and Power BI
+- Built customer segmentation, churn analysis, cohort analysis, and reorder behavior analysis
+- Identified revenue leakage areas and retention opportunities
+- Developed executive dashboards and business recommendations
+
+🔗 [View Project](./RetailPulse_Project)
+
 ### Excel Project: Customer Retention & CLV Analysis
 - Analyzed customer purchasing behavior using cohort analysis and CLV modeling
 - Identified high-value vs low-value customers and retention patterns
@@ -27,7 +35,11 @@ Welcome to my Data Analyst Portfolio. This repository showcases projects built u
 
 ## Skills Demonstrated
 
-- SQL (Joins, Aggregations, Window Functions, CTEs, Subquery)
+- SQL (Joins, CTEs, Window Functions, Aggregations, Subqueries)
+- Python (Pandas, Data Cleaning, Analysis)
+- Customer Segmentation (RFM Analysis)
+- Cohort Retention Analysis
+- Churn Analysis & Prediction
 - Excel (Pivot Tables, Advanced Formulas, Data Analysis)
 - Power BI (Data Modeling, DAX, Dashboard Design, Power Query)
 - Data Cleaning & Transformation
