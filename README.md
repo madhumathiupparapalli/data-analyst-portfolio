@@ -1,6 +1,6 @@
 # Data Analyst Portfolio
 
-Welcome to my Data Analyst Portfolio. This repository showcases projects built using **SQL, Excel, and Power BI**, focusing on solving real-world business problems through data analysis and visualization.
+Welcome to my Data Analyst Portfolio. This repository showcases projects built using **SQL, Excel, Python and Power BI**, focusing on solving real-world business problems through data analysis and visualization.
 
 ## Projects
 
