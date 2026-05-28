@@ -97,27 +97,6 @@ Focus retention efforts on Loyal Customers, as they are closest to becoming high
 
 ---
 
-# Project Structure
-
-```text
-RetailPulse_Project/
-│
-├── 02_leakage_analysis.sql
-├── 03_clean_data.py
-├── 04_rfm_analysis.py
-├── 05_cohort_analysis.py
-├── 06_Correlation_analysis.py
-├── 07_Churn_Prediction_Model.py
-├── 08_dashboard_data.py
-│
-├── RetailPulse-Executive Summary.png
-├── RetailPulse-Customer Intelligence.png
-│
-└── README.md
-```
-
----
-
 # Skills Demonstrated
 - SQL querying & business analysis
 - Customer segmentation (RFM)
