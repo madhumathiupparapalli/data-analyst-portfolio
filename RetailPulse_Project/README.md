@@ -1,7 +1,7 @@
 # RetailPulse: E-Commerce Customer Intelligence
 
 ## Project Overview
-RetailPulse is a business analytics project built using the Instacart dataset containing 32M+ grocery transactions.  
+RetailPulse is a business analytics project built using the Instacart dataset containing grocery transactions.  
 
 The goal of this project was to identify:
 - customer churn patterns
