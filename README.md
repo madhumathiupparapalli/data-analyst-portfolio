@@ -5,7 +5,7 @@ Welcome to my Data Analyst Portfolio. This repository showcases projects built u
 ## Projects
 
 ### RetailPulse: E-Commerce Customer Intelligence
-- Analyzed 32M+ Instacart transactions using SQL, Python, and Power BI
+- Analyzed Instacart transactions using SQL, Python, and Power BI
 - Built customer segmentation, churn analysis, cohort analysis, and reorder behavior analysis
 - Identified revenue leakage areas and retention opportunities
 - Developed executive dashboards and business recommendations
