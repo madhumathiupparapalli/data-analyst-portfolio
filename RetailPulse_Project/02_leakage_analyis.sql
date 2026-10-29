@@ -1,63 +1,67 @@
--- Which products do customers buy once and never again?
+-- Which products have the highest number of first-time purchase occurences?
 
-with non_reordered_products as (
   select
-  count(op.reordered) as not_reordered,
-  p.product_name
+  p.product_id,
+  p.product_name,
+  count(*) as first_time_purchase_count
   from order_products__prior as op
   left join products as p
   on op.product_id = p.product_id
-  Where reordered = 0 and p.product_name is not null
-  group by p.product_name
-)
-select * from non_reordered_products
-order by not_reordered desc
+  Where reordered = 0
+  group by p.product_id, p.product_name
+  order by first_time_purchase_count desc
+  
 
 -- Which departments have the worst reorder rates?
 
-with worst_reorder_rates as (
-  select
-  count(op.reordered) as least_reordered,
-  d.department
-  from departments as d 
-  left join products as p
-  on d.department_id = p.department_id
-  left join order_products__prior as op
-  on p.product_id = op.product_id
-  where reordered = 0
-  group by d.department
-)
-select * from worst_reorder_rates
-order by least_reordered desc
+select
+    d.department_id,
+    d.department,
+    count(*) as total_product_records,
+    sum(case when op.reordered = 1 then 1 else 0 end)
+        as reordered_records,
+    cast(
+         100.0 * sum(
+        case when op.reordered = 1 then 1 else 0 end
+    ) / nullif (count(*), 0)
+    as decimal(5,2)
+    ) as reorder_rate_pct
+from order_products__prior as op
+join products as p
+    on op.product_id = p.product_id
+join departments as d
+    on p.department_id = d.department_id
+group by d.department_id, d.department
+order by reorder_rate_pct asc
 
--- How many orders has each customer placed? Who has placed only 1 or 2 orders and disappeared?
-
-with orders_placed as (
-  select
-  count(order_id) as order_count,
-  user_id
-  from orders
-  group by user_id
-  having count(order_id) <= 5
-)
-select * from orders_placed
 
 -- Which day of week and hour of day has the most orders? Does order timing affect reorder behavior?
 
-with most_orders_of_day as (
-  select
-  order_hour_of_day,
-  count(order_hour_of_day) as total_orders,
-  order_dow
-  from orders 
-  group by order_dow, order_hour_of_day
-)
-select * from most_orders_of_day
+select
+    o.order_dow,
+    o.order_hour_of_day,
+    count(distinct o.order_id) as total_orders,
+    count(*) as total_product_records,
+    sum(case when op.reordered = 1 then 1 else 0 end)
+        as reordered_records,
+    cast(
+        100.0 * sum(
+            case when op.reordered = 1 then 1 else 0 end
+        ) / nullif(count(*),0)
+        as decimal
+    ) as reorder_rate_pct
+from orders as o
+join order_products__prior as op
+   on o.order_id = op.order_id
+group by 
+    o.order_dow,
+    o.order_hour_of_day
 order by total_orders desc
 
 -- What are the top 10 most reordered products? 
 
-Select top 10 
+Select top 10
+p.product_id,
 p.product_name,
 count(*) as reorder_count
 from order_products__prior as op
@@ -65,21 +69,21 @@ left join products as p
 on op.product_id = p.product_id
 where op.reordered = 1
 and p.product_name is not null
-group by p.product_name
-order by reorder_count desc
+group by p.product_id,p.product_name
+order by reorder_count desc, p.product_id
 
 -- Which department contribute most to orders? 
 
 select
 d.department,
-count(op.order_id) as total_orders
+count(op.order_id) as total_product_records
 from departments as d
 left join products as p
 on d.department_id = p.department_id
 left join order_products__prior as op
 on op.product_id = p.product_id
 group by d.department
-order by total_orders desc
+order by total_product_records desc
 
 -- Which products are most commonly added first to cart?
 
